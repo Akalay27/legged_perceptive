@@ -15,7 +15,7 @@ convex_plane_decomposition_ros package (and its dependencies), DO NOT build the 
 
 ### Build
 
-    git clone git@github.com:qiayuanliao/legged_perceptive.git
+    git clone git@github.com:Akalay27/legged_perceptive.git
     catkin build legged_perceptive_description legged_perceptive_controllers
 
 ### Run 
@@ -26,3 +26,24 @@ Launch gazbeo
 Load the controller
 
     roslaunch legged_perceptive_controllers load_controller.launch
+    
+    
+### Camera Specific Setup
+
+Install the [Realsense D345i Ros 1 wrapper](https://github.com/IntelRealSense/realsense-ros/tree/ros1-legacy)
+Make sure to use the ros1-legacy branch
+
+To confirm it is properly installed and the camera is working use
+	realsense-viewer
+
+
+To run the camera and output pointcloud messages run
+	roslaunch realsense2_camera rs_camera.launch filters:=pointcloud
+	
+
+### Elevation Mapping Testing
+
+To individually test the elevation mapping node on the D435i camera run
+	roslaunch legged_perceptive_description d435_elevation_mapping_demo.launch
+
+
