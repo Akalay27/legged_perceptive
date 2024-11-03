@@ -20,11 +20,11 @@
     </xacro:sensor_t265> -->
 
 
-    <xacro:Livox_Mid360 name="livox_right" parent="base">
+    <xacro:Livox_Mid360 name="livox_right" parent="base" ros_topic="/livox/lidar_192_168_8_101">
         <origin xyz="0.365 -0.068 -0.030" rpy="-2.59 1.03 3.09"/>
     </xacro:Livox_Mid360>
 
-    <xacro:Livox_Mid360 name="livox_left" parent="base">
+    <xacro:Livox_Mid360 name="livox_left" parent="base" ros_topic="/livox/lidar_192_168_8_102">
         <origin xyz="0.365 0.068 -0.030" rpy="2.59 1.03 -3.09"/>
     </xacro:Livox_Mid360>
 
