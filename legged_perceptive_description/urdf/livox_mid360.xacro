@@ -102,8 +102,4 @@
     </gazebo>
 
   </xacro:macro>
-
-  <!-- Use the combined Livox sensor macro -->
-  <xacro:Livox_Mid360 name="livox" parent="base_link"/>
-
 </robot>
