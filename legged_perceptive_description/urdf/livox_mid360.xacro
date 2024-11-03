@@ -52,7 +52,7 @@
 
     <!-- Gazebo sensor plugin for visualization and sensor properties -->
     <gazebo reference="${name}_base">
-      <sensor type="ray" name="${name}">
+      <sensor type="ray" name="lo_${name}">
         <pose>0 0 0 0 0 0</pose>
         <visualize>${visualize}</visualize>
         <update_rate>${update_rate}</update_rate>
