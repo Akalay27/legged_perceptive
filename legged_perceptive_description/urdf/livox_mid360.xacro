@@ -21,7 +21,7 @@
   </xacro:macro>
 
   <!-- Define the main Livox Mid360 sensor macro -->
-  <xacro:macro name="Livox_Mid360" params="name parent visualize:=True update_rate:=10 resolution:=0.002 noise_mean:=0.0 noise_stddev:=0.01">
+  <xacro:macro name="Livox_Mid360" params="name parent *origin visualize:=True update_rate:=10 resolution:=0.002 noise_mean:=0.0 noise_stddev:=0.01">
 
     <!-- Sensor base link with physical and visual details -->
     <link name="${name}_base">
