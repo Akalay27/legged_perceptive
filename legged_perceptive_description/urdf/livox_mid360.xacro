@@ -47,11 +47,11 @@
     <joint name="${name}_to_${name}_base_joint" type="fixed">
         <xacro:insert_block name="origin"/>
         <parent link="${parent}"/>
-        <child link="${name}_base"/>
+        <child link="${name}"/>
     </joint>
 
     <!-- Gazebo sensor plugin for visualization and sensor properties -->
-    <gazebo reference="${name}_base">
+    <gazebo reference="${name}">
       <sensor type="ray" name="${name}">
         <pose>0 0 0 0 0 0</pose>
         <visualize>${visualize}</visualize>
