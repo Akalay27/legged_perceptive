@@ -21,7 +21,7 @@
   </xacro:macro>
 
   <!-- Define the main Livox Mid360 sensor macro -->
-  <xacro:macro name="Livox_Mid360" params="name parent visualize:=True update_rate:=10 resolution:=0.002 noise_mean:=0.0 noise_stddev:=0.01 *origin">
+  <xacro:macro name="Livox_Mid360" params="name parent visualize:=True update_rate:=10 resolution:=0.002 noise_mean:=0.0 noise_stddev:=0.01">
 
     <!-- Sensor base link with physical and visual details -->
     <link name="${name}_base">
@@ -34,23 +34,29 @@
           izz="${(2*0.270)/5.0*(0.022*0.022)}"/>
       </inertial>
       
-      <!-- Visual using sphere -->
-      <visual>
-        <origin rpy="0 0 0" xyz="0 0 -0.0076"/>
+      <!-- Visual using mesh -->
+      <!-- <visual> 
+        <origin xyz="0.00 0 0.0" rpy="0 0 0"/>
         <geometry>
-          <sphere radius="0.022"/>
+          <mesh filename="package://livox_laser_simulation/meshes/livox_mid40.dae"/>
         </geometry>
         <color rgba="0.0 0.0 0.5 0.5"/>
+      </visual> -->
+      <!-- Visual using sphere -->
+      <visual>
+            <origin rpy="0 0 0" xyz="0 0 -0.0076"/>
+            <geometry>
+                <sphere radius="0.022"/>
+            </geometry>
+            <color rgba="0.0 0.0 0.5 0.5"/>
       </visual>
     </link>
 
     <!-- Joint to attach sensor to parent link -->
     <joint name="${name}_to_${name}_base_joint" type="fixed">
-      <parent link="${parent}"/>
-      <child link="${name}_base"/>
-      <xacro:if value="$(has_block origin)">
         <xacro:insert_block name="origin"/>
-      </xacro:if>
+        <parent link="${parent}"/>
+        <child link="${name}_base"/>
     </joint>
 
     <!-- Gazebo sensor plugin for visualization and sensor properties -->
@@ -96,17 +102,4 @@
     </gazebo>
 
   </xacro:macro>
-
-  <!-- Instantiate the macro with origin blocks -->
-  <!-- <xacro:Livox_Mid360 name="livox_right" parent="base">
-    <origin xyz="0.365 -0.068 -0.030" rpy="-2.59 1.03 3.09"/>
-  </xacro:Livox_Mid360>
-
-  <xacro:Livox_Mid360 name="livox_left" parent="base">
-    <origin xyz="0.365 0.068 -0.030" rpy="2.59 1.03 -3.09"/>
-  </xacro:Livox_Mid360>
-
-  <!-- If you want to instantiate without an origin, ensure the macro handles it -->
-  <xacro:Livox_Mid360 name="livox_center" parent="base_link"/> -->
-
 </robot>
