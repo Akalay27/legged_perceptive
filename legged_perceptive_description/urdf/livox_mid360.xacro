@@ -19,11 +19,11 @@
     </inertial>
   </xacro:macro>
 
-  <!-- Define the main Livox Mid360 sensor macro -->
+  <!-- Updated Livox Mid360 sensor macro with matching naming -->
   <xacro:macro name="Livox_Mid360" params="name parent *origin ros_topic:=livox visualize:=True update_rate:=10 resolution:=0.002 noise_mean:=0.0 noise_stddev:=0.01">
 
-    <!-- Sensor base link with physical and visual details -->
-    <link name="${name}_base">
+    <!-- Sensor link with physical and visual details -->
+    <link name="${name}">
       <inertial>
         <origin rpy="0 0 0" xyz="0 0 -0.0076"/>
         <mass value="0.270"/>
@@ -35,23 +35,63 @@
       
       <!-- Visual using sphere -->
       <visual>
-            <origin rpy="0 0 0" xyz="0 0 -0.0076"/>
-            <geometry>
-                <sphere radius="0.022"/>
-            </geometry>
-            <color rgba="0.0 0.0 0.5 0.5"/>
+        <origin rpy="0 0 0" xyz="0 0 -0.0076"/>
+        <geometry>
+          <sphere radius="0.022"/>
+        </geometry>
+        <color rgba="0.0 0.0 0.5 0.5"/>
       </visual>
+
+      <!-- Collision elements from the old macro -->
+      <collision>
+        <origin xyz="0 0 0.027" rpy="0 0 0"/>
+        <geometry>
+          <box size="0.003 0.067 0.0165"/>
+        </geometry>
+      </collision>
+      <collision>
+        <origin xyz="0 0.041 0.007" rpy="-1.04 0 0"/>
+        <geometry>
+          <box size="0.003 0.055 0.024"/>
+        </geometry>
+      </collision>
+      <collision>
+        <origin xyz="0 -0.041 0.007" rpy="1.04 0 0"/>
+        <geometry>
+          <box size="0.003 0.055 0.024"/>
+        </geometry>
+      </collision>
+      <collision>
+        <origin xyz="0 0 0.027" rpy="0 0 0"/>
+        <geometry>
+          <box size="0.067 0.003 0.0165"/>
+        </geometry>
+      </collision>
+      <collision>
+        <origin xyz="0.041 0 0.007" rpy="0 1.04 0"/>
+        <geometry>
+          <box size="0.055 0.003 0.024"/>
+        </geometry>
+      </collision>
+      <collision>
+        <origin xyz="-0.041 0 0.007" rpy="0 -1.04 0"/>
+        <geometry>
+          <box size="0.055 0.003 0.024"/>
+        </geometry>
+      </collision>
     </link>
 
     <!-- Joint to attach sensor to parent link -->
-    <joint name="${name}_to_${name}_base_joint" type="fixed">
-        <xacro:insert_block name="origin"/>
-        <parent link="${parent}"/>
-        <child link="${name}"/>
+    <joint name="${name}_fixed" type="fixed">
+      <xacro:insert_block name="origin"/>
+      <parent link="${parent}"/>
+      <child link="${name}"/>
     </joint>
 
     <!-- Gazebo sensor plugin for visualization and sensor properties -->
     <gazebo reference="${name}">
+      <self_collide>1</self_collide>
+      <material>Gazebo/Blue</material>
       <sensor type="ray" name="${name}">
         <pose>0 0 0 0 0 0</pose>
         <visualize>${visualize}</visualize>
