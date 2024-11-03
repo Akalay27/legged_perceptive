@@ -49,52 +49,14 @@
                 <sphere radius="0.022"/>
             </geometry>
             <color rgba="0.0 0.0 0.5 0.5"/>
-    </visual>
-
-      <!-- Collisions for more accurate simulation -->
-      <collision>
-        <origin xyz="0 0 0.027" rpy="0 0 0"/>
-        <geometry>
-          <box size="0.003 0.067 0.0165"/>
-        </geometry>
-      </collision>
-      <collision>
-        <origin xyz="0 0.041 0.007" rpy="-1.04 0 0"/>
-        <geometry>
-          <box size="0.003 0.055 0.024"/>
-        </geometry>
-      </collision>
-      <collision>
-        <origin xyz="0 -0.041 0.007" rpy="1.04 0 0"/>
-        <geometry>
-          <box size="0.003 0.055 0.024"/>
-        </geometry>
-      </collision>
-      <collision>
-        <origin xyz="0 0 0.027" rpy="0 0 0"/>
-        <geometry>
-          <box size="0.067 0.003 0.0165"/>
-        </geometry>
-      </collision>
-      <collision>
-        <origin xyz="0.041 0 0.007" rpy="0 1.04 0"/>
-        <geometry>
-          <box size="0.055 0.003 0.024"/>
-        </geometry>
-      </collision>
-      <collision>
-        <origin xyz="-0.041 0 0.007" rpy="0 -1.04 0"/>
-        <geometry>
-          <box size="0.055 0.003 0.024"/>
-        </geometry>
-      </collision>
+      </visual>
     </link>
 
     <!-- Joint to attach sensor to parent link -->
     <joint name="${name}_to_${name}_base_joint" type="fixed">
-      <parent link="${parent}"/>
-      <child link="${name}_base"/>
-      <origin rpy="0 0 0" xyz="0.0 1.0 0.2"/>
+        <parent link="${parent}"/>
+        <child link="${name}_base"/>
+        <xacro:insert_block name="origin"/>
     </joint>
 
     <!-- Gazebo sensor plugin for visualization and sensor properties -->
