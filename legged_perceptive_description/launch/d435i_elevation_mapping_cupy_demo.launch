@@ -1,0 +1,34 @@
+<launch>
+    <!-- Elevation mapping node -->
+    <node pkg="elevation_mapping_cupy" type="elevation_mapping_node" name="elevation_mapping" output="screen">
+        <rosparam command="load" file="$(find elevation_mapping_cupy)/config/core/core_param.yaml"/>
+        <rosparam command="load" file="$(find legged_perceptive_description)/config/d435i_cupy_elevation_mapping_setup.yaml"/>
+    </node>
+    
+    <!-- launch d435i camera -->
+    <include file="$(find realsense2_camera)/launch/rs_camera.launch">
+        <arg name="filters" value="pointcloud"/>
+    </include>
+    
+    <!-- translate static publisher to pose estimates -->
+    <node pkg="legged_perceptive_description" type="tf_to_pose_publisher_no_topic_change.py" name="tf_to_pose_publisher" output="screen">
+        <param name="from_frame" value="map"/>
+        <param name="to_frame" value="camera_link"/>
+    </node>
+    
+    <!-- Launch visualizations for the resulting elevation map -->
+    <include file="$(find elevation_mapping_demos)/launch/visualization.launch" />
+    
+    <!-- tie base footprint to camera link -->
+    <node pkg="tf" type="static_transform_publisher" name="footprint_to_camera_link_publisher" output="screen" args="0 0 0 0 0 0 base_footprint camera_link 10"/>
+
+    <!-- tie map to odom -->
+    <node pkg="tf" type="static_transform_publisher" name="map_to_odom_publisher" output="screen" args="0 0 0 0 0 0 map odom 10"/>
+
+    <!-- publish static pose for camera -->
+    <node pkg="tf" type="static_transform_publisher" name="odom_to_base_footprint_publisher" output="screen" args="0 0 1 0 0 0 odom base_footprint 10"/>
+
+    <!-- Launch RViz with the demo configuration -->
+    <node name="rviz" pkg="rviz" type="rviz" args="-d $(find elevation_mapping_demos)/rviz/elevation_map_visualization_pointcloud.rviz" />
+  
+</launch>

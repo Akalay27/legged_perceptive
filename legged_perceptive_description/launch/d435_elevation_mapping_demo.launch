@@ -9,7 +9,7 @@
   </node>
   
   <!-- launch d435i camera -->
-    <include file="$(find realsense2_camera)/launch/rs_camera.launch">
+  <include file="$(find realsense2_camera)/launch/rs_camera.launch">
     <arg name="filters" value="pointcloud"/>
   </include>
   
@@ -21,10 +21,6 @@
   
   <!-- publish static pose for camera -->
   <node pkg="tf" type="static_transform_publisher" name="static_transform_publisher" output="screen" args="0 0 1 0 0 0 map camera_link 10"/>
-
-
-  <!-- Launch visualizations for the resulting elevation map -->
-  <include file="$(find elevation_mapping_demos)/launch/visualization.launch" />
 
   <!-- Launch RViz with the demo configuration -->
   <node name="rviz" pkg="rviz" type="rviz" args="-d $(find elevation_mapping_demos)/rviz/elevation_map_visualization_pointcloud.rviz" />

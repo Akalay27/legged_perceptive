@@ -1,0 +1,29 @@
+#### Plugins ########
+#### plugin_config_file: '$(rospack find elevation_mapping_cupy)/config/core/plugin_config.yaml'
+
+#### Channel Fusions ########
+pointcloud_channel_fusions:
+  rgb: 'color'                # 'color' fusion is used for the 'rgb' channel
+  default: 'average'          # 'average' fusion is used for channels not listed here
+
+image_channel_fusions:
+  rgb: 'color'                # 'color' fusion is used for the 'rgb' channel
+  default: 'exponential'      # 'exponential' fusion is used for channels not listed here
+  feat_.*: 'exponential'      # 'exponential' fusion is also used for any channel starting with 'feat_' Regular expressions can be used for channel names
+
+#### Subscribers ######
+subscribers:
+  front_cam:
+    topic_name: '/camera/depth/color/points'
+    data_type: pointcloud
+    
+    
+publishers:
+  elevation_map_raw:
+    layers: ['elevation', 'traversability', 'variance','rgb']
+    basic_layers: ['elevation']
+    fps: 5.0
+  elevation_map_filter:
+    layers: ['min_filter', 'smooth', 'inpaint', 'elevation']
+    basic_layers: ['min_filter']
+    fps: 3.0
