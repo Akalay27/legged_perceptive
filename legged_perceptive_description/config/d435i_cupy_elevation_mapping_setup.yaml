@@ -20,10 +20,10 @@ subscribers:
     
 publishers:
   elevation_map_raw:
-    layers: ['elevation', 'traversability', 'variance','rgb']
+    layers: ['elevation', 'variance','rgb']
     basic_layers: ['elevation']
-    fps: 5.0
+    fps: 100.0
   elevation_map_filter:
     layers: ['min_filter', 'smooth', 'inpaint', 'elevation']
     basic_layers: ['min_filter']
-    fps: 3.0
+    fps: 100.0
