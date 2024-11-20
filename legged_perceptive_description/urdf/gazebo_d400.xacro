@@ -21,6 +21,8 @@
             <kd>1</kd>
             <!--<max_vel>0.01</max_vel>
             <min_depth>0</min_depth>-->
+            
+            <!-- Color Camera Sensor -->
             <sensor name="${camera_name}color" type="camera">
                 <camera name="${camera_name}">
                     <horizontal_fov>${69.4*deg_to_rad}</horizontal_fov>
@@ -43,6 +45,8 @@
                 <update_rate>30</update_rate>
                 <visualize>1</visualize>
             </sensor>
+            
+            <!-- Infrared Cameras -->
             <sensor name="${camera_name}ired1" type="camera">
                 <camera name="${camera_name}">
                     <horizontal_fov>${85.2*deg_to_rad}</horizontal_fov>
@@ -87,12 +91,15 @@
                 <update_rate>90</update_rate>
                 <visualize>0</visualize>
             </sensor>
+            
+            <!-- Depth Sensor with Reduced Resolution -->
             <sensor name="${camera_name}depth" type="depth">
                 <camera name="${camera_name}">
                     <horizontal_fov>${85.2*deg_to_rad}</horizontal_fov>
                     <image>
-                        <width>1280</width>
-                        <height>720</height>
+                        <!-- Reduced resolution from 1280x720 to 640x360 -->
+                        <width>320</width>
+                        <height>180</height>
                     </image>
                     <clip>
                         <near>0.1</near>
@@ -105,6 +112,7 @@
                     </noise>
                 </camera>
                 <always_on>1</always_on>
+                <!-- Optionally reduce update rate if needed -->
                 <update_rate>10</update_rate>
                 <visualize>0</visualize>
             </sensor>

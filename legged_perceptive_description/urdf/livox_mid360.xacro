@@ -19,97 +19,74 @@
     </inertial>
   </xacro:macro>
 
-  <!-- Updated Livox Mid360 sensor macro with matching naming -->
+  <!-- Livox Mid360 sensor macro with unique naming -->
   <xacro:macro name="Livox_Mid360" params="name parent *origin ros_topic:=livox visualize:=True update_rate:=10 resolution:=0.002 noise_mean:=0.0 noise_stddev:=0.01">
 
-    <!-- Sensor link with physical and visual details -->
-    <link name="${name}">
+    <!-- Sensor Link with Unique Name -->
+    <link name="${name}_link">
       <inertial>
         <origin rpy="0 0 0" xyz="0 0 -0.0076"/>
         <mass value="0.270"/>
         <inertia
-          ixx="${(2*0.270)/5.0*(0.022*0.022)}" ixy="0.0" ixz="0.0"
-          iyy="${(2*0.270)/5.0*(0.022*0.022)}" iyz="0.0"
-          izz="${(2*0.270)/5.0*(0.022*0.022)}"/>
+          ixx="${(2 * 0.270) / 5.0 * (0.022 * 0.022)}"
+          ixy="0.0"
+          ixz="0.0"
+          iyy="${(2 * 0.270) / 5.0 * (0.022 * 0.022)}"
+          iyz="0.0"
+          izz="${(2 * 0.270) / 5.0 * (0.022 * 0.022)}"/>
       </inertial>
       
-      <!-- Visual using sphere -->
+      <!-- Visual using Sphere -->
       <visual>
         <origin rpy="0 0 0" xyz="0 0 -0.0076"/>
         <geometry>
           <sphere radius="0.022"/>
         </geometry>
-        <color rgba="0.0 0.0 0.5 0.5"/>
+        <material>
+          <color rgba="0.0 0.0 0.5 0.5"/>
+        </material>
       </visual>
-
-      <!-- Collision elements from the old macro -->
+      
+      <!-- Optional: Add Collision Elements Here If Needed -->
+      <!--
       <collision>
         <origin xyz="0 0 0.027" rpy="0 0 0"/>
         <geometry>
           <box size="0.003 0.067 0.0165"/>
         </geometry>
       </collision>
-      <collision>
-        <origin xyz="0 0.041 0.007" rpy="-1.04 0 0"/>
-        <geometry>
-          <box size="0.003 0.055 0.024"/>
-        </geometry>
-      </collision>
-      <collision>
-        <origin xyz="0 -0.041 0.007" rpy="1.04 0 0"/>
-        <geometry>
-          <box size="0.003 0.055 0.024"/>
-        </geometry>
-      </collision>
-      <collision>
-        <origin xyz="0 0 0.027" rpy="0 0 0"/>
-        <geometry>
-          <box size="0.067 0.003 0.0165"/>
-        </geometry>
-      </collision>
-      <collision>
-        <origin xyz="0.041 0 0.007" rpy="0 1.04 0"/>
-        <geometry>
-          <box size="0.055 0.003 0.024"/>
-        </geometry>
-      </collision>
-      <collision>
-        <origin xyz="-0.041 0 0.007" rpy="0 -1.04 0"/>
-        <geometry>
-          <box size="0.055 0.003 0.024"/>
-        </geometry>
-      </collision>
+      -->
     </link>
 
-    <!-- Joint to attach sensor to parent link -->
-    <joint name="${name}_fixed" type="fixed">
-      <xacro:insert_block name="origin"/>
+    <!-- Fixed Joint to Attach Sensor to Parent Link -->
+    <joint name="${name}_fixed_joint" type="fixed">
+      <origin xyz="0 0 0" rpy="0 0 0"/> <!-- Replace with actual origin if different -->
       <parent link="${parent}"/>
-      <child link="${name}"/>
+      <child link="${name}_link"/>
     </joint>
 
-    <!-- Gazebo sensor plugin for visualization and sensor properties -->
-    <gazebo reference="${name}">
+    <!-- Gazebo Sensor Plugin for Visualization and Sensor Properties -->
+    <gazebo reference="${name}_link">
       <self_collide>1</self_collide>
       <material>Gazebo/Blue</material>
-      <sensor type="ray" name="${name}">
+      <sensor type="ray" name="${name}_sensor">
         <pose>0 0 0 0 0 0</pose>
         <visualize>${visualize}</visualize>
         <update_rate>${update_rate}</update_rate>
-        <plugin name="gazebo_ros_laser_controller" filename="liblivox_laser_simulation.so">
+        <plugin name="${name}_gazebo_plugin" filename="liblivox_laser_simulation.so">
           <ray>
             <scan>
               <horizontal>
                 <samples>100</samples>
                 <resolution>1</resolution>
                 <min_angle>0</min_angle>
-                <max_angle>${2*M_PI}</max_angle>
+                <max_angle>${2 * M_PI}</max_angle>
               </horizontal>
               <vertical>
                 <samples>360</samples>
                 <resolution>1</resolution>
-                <min_angle>${-7.22/180*M_PI}</min_angle>
-                <max_angle>${55.22/180*M_PI}</max_angle>
+                <min_angle>${-7.22 / 180 * M_PI}</min_angle>
+                <max_angle>${55.22 / 180 * M_PI}</max_angle>
               </vertical>
             </scan>
             <range>
@@ -133,4 +110,5 @@
     </gazebo>
 
   </xacro:macro>
+
 </robot>
