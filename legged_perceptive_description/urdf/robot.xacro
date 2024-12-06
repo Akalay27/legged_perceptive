@@ -29,6 +29,4 @@
         <origin xyz="0.365 0.068 -0.030" rpy="2.59 1.03 -3.09"/>
     </xacro:Livox_Mid360> -->
 
-    <xacro:Livox_Mid_gazebo_sensor/>
-
 </robot>
