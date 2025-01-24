@@ -9,7 +9,7 @@
     <arg name="output_type" default="0"/>
     <arg name="cmdline_arg" default="$(arg bd_list)"/>
     <arg name="msg_frame_id" default="lidar_frame"/>
-
+   
     <!--user configure parameters for ros end-->
 
     <param name="xfer_format" value="$(arg xfer_format)"/>
