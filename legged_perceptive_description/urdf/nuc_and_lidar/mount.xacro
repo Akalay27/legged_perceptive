@@ -1,0 +1,133 @@
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="onshape">
+    <link name="nuc_top">
+        <visual>
+            <origin xyz="0.026999998021894261457 0.045948434504587840066 0.089232763303492723672" rpy="5.509717323009763505e-17 4.2078674255845263165e-14 -3.141592653589793116" />
+            <geometry>
+                <mesh filename="$(find legged_perceptive_description)/urdf/nuc_and_lidar/mid-360_lidar_unit.stl"/>
+            </geometry>
+            <material name="mid-360_lidar_unit_material">
+                <color rgba="0.61568627450980395466 0.81176470588235294379 0.92941176470588238168 1.0"/>
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="0.026999998021894261457 0.045948434504587840066 0.089232763303492723672" rpy="5.509717323009763505e-17 4.2078674255845263165e-14 -3.141592653589793116" />
+            <geometry>
+                <mesh filename="$(find legged_perceptive_description)/urdf/nuc_and_lidar/mid-360_lidar_unit.stl"/>
+            </geometry>
+        </collision>
+        <visual>
+            <origin xyz="0.11750000188499688802 0.092000000234693346535 0.0076199999999999913636" rpy="0 -5.5511151231257827021e-17 3.141592653589793116" />
+            <geometry>
+                <mesh filename="$(find legged_perceptive_description)/urdf/nuc_and_lidar/nuc_enclosure_side.stl"/>
+            </geometry>
+            <material name="nuc_enclosure_side_material">
+                <color rgba="0.61568627450980395466 0.81176470588235294379 0.92941176470588238168 1.0"/>
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="0.11750000188499688802 0.092000000234693346535 0.0076199999999999913636" rpy="0 -5.5511151231257827021e-17 3.141592653589793116" />
+            <geometry>
+                <mesh filename="$(find legged_perceptive_description)/urdf/nuc_and_lidar/nuc_enclosure_side.stl"/>
+            </geometry>
+        </collision>
+        <visual>
+            <origin xyz="-0.018000001978128968294 0.017400000130385184088 0.066620000059604680964" rpy="3.141592653589793116 -0 0" />
+            <geometry>
+                <mesh filename="$(find legged_perceptive_description)/urdf/nuc_and_lidar/lidar_base.stl"/>
+            </geometry>
+            <material name="lidar_base_material">
+                <color rgba="0.97254901960784312376 0.52941176470588235947 0.0039215686274509803377 1.0"/>
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="-0.018000001978128968294 0.017400000130385184088 0.066620000059604680964" rpy="3.141592653589793116 -0 0" />
+            <geometry>
+                <mesh filename="$(find legged_perceptive_description)/urdf/nuc_and_lidar/lidar_base.stl"/>
+            </geometry>
+        </collision>
+        <visual>
+            <origin xyz="-0.030500001884996894019 5.5879373633057212225e-11 0.0076200000000000000372" rpy="0 -0 0" />
+            <geometry>
+                <mesh filename="$(find legged_perceptive_description)/urdf/nuc_and_lidar/nuc_enclosure_side.stl"/>
+            </geometry>
+            <material name="nuc_enclosure_side_material">
+                <color rgba="0.61568627450980395466 0.81176470588235294379 0.92941176470588238168 1.0"/>
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="-0.030500001884996894019 5.5879373633057212225e-11 0.0076200000000000000372" rpy="0 -0 0" />
+            <geometry>
+                <mesh filename="$(find legged_perceptive_description)/urdf/nuc_and_lidar/nuc_enclosure_side.stl"/>
+            </geometry>
+        </collision>
+        <visual>
+            <origin xyz="0.10975000262260437012 0.10950000036507849532 -1.3919421462405475744e-17" rpy="3.141592653589793116 1.1102230246251565404e-16 0" />
+            <geometry>
+                <mesh filename="$(find legged_perceptive_description)/urdf/nuc_and_lidar/mounting_rail.stl"/>
+            </geometry>
+            <material name="mounting_rail_material">
+                <color rgba="0.98039215686274505668 0.71372549019607844922 0.0039215686274509803377 1.0"/>
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="0.10975000262260437012 0.10950000036507849532 -1.3919421462405475744e-17" rpy="3.141592653589793116 1.1102230246251565404e-16 0" />
+            <geometry>
+                <mesh filename="$(find legged_perceptive_description)/urdf/nuc_and_lidar/mounting_rail.stl"/>
+            </geometry>
+        </collision>
+        <visual>
+            <origin xyz="-0.018000001978129134828 0.017500000130385186953 0.066620000059604639331" rpy="3.141592653589793116 -0 0" />
+            <geometry>
+                <mesh filename="$(find legged_perceptive_description)/urdf/nuc_and_lidar/nuc_top.stl"/>
+            </geometry>
+            <material name="nuc_top_material">
+                <color rgba="0.91764705882352937127 0.91764705882352937127 0.91764705882352937127 1.0"/>
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="-0.018000001978129134828 0.017500000130385186953 0.066620000059604639331" rpy="3.141592653589793116 -0 0" />
+            <geometry>
+                <mesh filename="$(find legged_perceptive_description)/urdf/nuc_and_lidar/nuc_top.stl"/>
+            </geometry>
+        </collision>
+        <visual>
+            <origin xyz="0.026999998021870863507 0.045888238620114721322 0.14122000005960458346" rpy="-3.141592653589793116 4.0906603741819780623e-17 -9.9579925010295568285e-17" />
+            <geometry>
+                <mesh filename="$(find legged_perceptive_description)/urdf/nuc_and_lidar/frame.stl"/>
+            </geometry>
+            <material name="frame_material">
+                <color rgba="0.61568627450980395466 0.81176470588235294379 0.92941176470588238168 1.0"/>
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="0.026999998021870863507 0.045888238620114721322 0.14122000005960458346" rpy="-3.141592653589793116 4.0906603741819780623e-17 -9.9579925010295568285e-17" />
+            <geometry>
+                <mesh filename="$(find legged_perceptive_description)/urdf/nuc_and_lidar/frame.stl"/>
+            </geometry>
+        </collision>
+        <visual>
+            <origin xyz="0.10975000262260437012 0.017500000074505805969 0" rpy="3.141592653589793116 -0 0" />
+            <geometry>
+                <mesh filename="$(find legged_perceptive_description)/urdf/nuc_and_lidar/mounting_rail.stl"/>
+            </geometry>
+            <material name="mounting_rail_material">
+                <color rgba="0.98039215686274505668 0.71372549019607844922 0.0039215686274509803377 1.0"/>
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="0.10975000262260437012 0.017500000074505805969 0" rpy="3.141592653589793116 -0 0" />
+            <geometry>
+                <mesh filename="$(find legged_perceptive_description)/urdf/nuc_and_lidar/mounting_rail.stl"/>
+            </geometry>
+        </collision>
+        <inertial>
+            <origin xyz="0.026999998542501377902 0.046932583314624368165 0.076119999605920501962" rpy="0 0 0"/>
+            <mass value="0.0023640589984545170264" />
+            <inertia ixx="1.7340911567852628544e-07" ixy="1.1255621588591829816e-14" ixz="-1.6675926952365447287e-15" iyy="5.6651910465068455143e-09" iyz="-3.4029341358220793481e-15" izz="1.7366137762786621632e-07" />
+        </inertial>
+    </link>
+
+
+
+
+</robot>
