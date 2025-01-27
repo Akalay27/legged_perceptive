@@ -2,12 +2,12 @@
     "configuration": "default",
     "documentId": "ea9e1cb6a141215ece5cf554",
     "documentMicroversion": "1c1fd9cf305d01f9b24130cb",
-    "elementId": "d32940bd727c7190a22de427",
+    "elementId": "35f08dd8df3574fbcf887493",
     "fullConfiguration": "default",
-    "id": "MZDZFPvWO9OlIHwt4",
+    "id": "MCTlEtx4jl73Nnxli",
     "isStandardContent": false,
-    "name": "NUC Top <1>",
-    "partId": "JXD",
+    "name": "NUC <2>",
+    "partId": "JHD",
     "suppressed": false,
     "type": "Part"
 }

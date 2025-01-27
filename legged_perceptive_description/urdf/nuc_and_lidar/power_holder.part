@@ -2,12 +2,12 @@
     "configuration": "default",
     "documentId": "ea9e1cb6a141215ece5cf554",
     "documentMicroversion": "1c1fd9cf305d01f9b24130cb",
-    "elementId": "d32940bd727c7190a22de427",
+    "elementId": "d2286e3078da8726a36e3a20",
     "fullConfiguration": "default",
-    "id": "MZDZFPvWO9OlIHwt4",
+    "id": "M+nPGIPlgqM+kSfjm",
     "isStandardContent": false,
-    "name": "NUC Top <1>",
-    "partId": "JXD",
+    "name": "power_holder <1>",
+    "partId": "JHD",
     "suppressed": false,
     "type": "Part"
 }

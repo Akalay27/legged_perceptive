@@ -5,6 +5,7 @@
     "onshape_secret_key": "J43o82771sRselk3fky8UCzvN3ArVOdAtDP9tyuBCjgyWpuK",
     "onshape_api": "https://cad.onshape.com",
     "drawFrames": true,
+    "packageName": "legged_perceptive_description/urdf",
     "simplifySTLs": "visual",
     "maxSTLSize": 2
 }
