@@ -30,6 +30,15 @@
         <origin xyz="0.365 0.068 -0.030" rpy="2.59 1.03 -3.09"/>
     </xacro:Livox_Mid360> -->
 
+    <!-- <joint name="camera_init_joint" type="fixed">
+        <parent link="lidar_frame"/>
+        <child link="camera_init"/>
+        <origin xyz="0 0 0" rpy="0 0 0"/> 
+    </joint> -->
+
+    
+
+
 
 
 </robot>

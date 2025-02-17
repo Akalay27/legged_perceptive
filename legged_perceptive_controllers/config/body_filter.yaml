@@ -1,27 +1,15 @@
 livox_front_filter:
   cloud_filter_chain:
-    - name: livox_filter
-      type: robot_body_filter/RobotBodyFilterPointCloud2
+    - name: cropbox_filter
+      type: point_cloud2_filters/CropBoxFilterPointCloud2
       params:
-        sensor/min_distance: 0.4
-        frames/fixed: odom
-        frames/sensor: livox_front_sensor_frame  # Match your sensor frame
-        frames/output: livox_front_sensor_frame # Match your sensor frame
-        body_model/inflation/padding: 0.0005
-        body_model/robot_description_param: legged_robot_description
-        debug/marker/shadow: true
-        debug/marker/contains: true
-        only_links:
-          - livox_front_sensor_frame  # Match your sensor link
-    - name: body_filter
-      type: robot_body_filter/RobotBodyFilterPointCloud2
-      params:
-        frames/fixed: odom
-        frames/sensor: livox_front_sensor_frame
-        frames/output: livox_front_sensor_frame
-        body_model/inflation/padding: 0.01
-        body_model/robot_description_param: legged_robot_description
-        debug/marker/shadow: true
-        debug/marker/contains: true
-        ignored_links/everywhere:
-          - base
+        active: True
+        input_frame: "lidar_frame"
+        output_frame: "lidar_frame"
+        min_x: -1
+        max_x: 1
+        min_y: -1
+        max_y: 1
+        min_z: -100
+        max_z: 100
+        negative: True
