@@ -44,7 +44,7 @@ track_point_x: 0.0
 track_point_y: 0.0
 track_point_z: 0.0
 time_tolerance: 1e-3
-scanning_duration: 1.5
+scanning_duration: 1
 visibility_cleanup_rate: 5
 
 # Map.

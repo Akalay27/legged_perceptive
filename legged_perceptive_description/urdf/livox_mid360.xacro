@@ -20,7 +20,7 @@
   </xacro:macro>
 
   <!-- Livox Mid360 sensor macro with unique naming -->
-  <xacro:macro name="Livox_Mid360" params="name parent *origin ros_topic:=livox visualize:=True update_rate:=10 resolution:=0.002 noise_mean:=0.0 noise_stddev:=0.01">
+  <xacro:macro name="Livox_Mid360" params="name parent *origin ros_topic:=livox visualize:=False update_rate:=10 resolution:=0.002 noise_mean:=0.0 noise_stddev:=0.01">
 
     <!-- Sensor Link with Unique Name -->
     <link name="${name}_link">
@@ -73,7 +73,7 @@
         <pose>0 0 0 0 0 0</pose>
         <visualize>${visualize}</visualize>
         <update_rate>${update_rate}</update_rate>
-        <plugin name="${name}_gazebo_plugin" filename="liblivox_laser_simulation.so">
+        <plugin name="gazebo_ros_laser_controller" filename="liblivox_laser_simulation.so">
           <ray>
             <scan>
               <horizontal>
@@ -83,7 +83,7 @@
                 <max_angle>${2 * M_PI}</max_angle>
               </horizontal>
               <vertical>
-                <samples>360</samples>
+                <samples>50</samples>
                 <resolution>1</resolution>
                 <min_angle>${-7.22 / 180 * M_PI}</min_angle>
                 <max_angle>${55.22 / 180 * M_PI}</max_angle>
@@ -103,7 +103,9 @@
           <visualize>${visualize}</visualize>
           <samples>${samples}</samples>
           <downsample>${downsample}</downsample>
-          <csv_file_name>package://livox_laser_simulation/scan_mode/mid360.csv</csv_file_name>
+          <publish_pointcloud_type>2</publish_pointcloud_type>
+          <frameName>${name}_link</frameName>
+          <csv_file_name>mid360-real-centr.csv</csv_file_name>
           <ros_topic>${ros_topic}</ros_topic>
         </plugin>
       </sensor>

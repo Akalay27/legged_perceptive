@@ -8,25 +8,23 @@
     <xacro:include filename="$(find legged_perceptive_description)/urdf/sensor_d435.xacro"/>
     <!-- <xacro:include filename="$(find legged_perceptive_description)/urdf/sensor_t265.xacro"/> -->
     <xacro:include filename="$(find legged_perceptive_description)/urdf/sensor_mid360.xacro"/>
-
+    <!-- <xacro:include filename="$(find legged_perceptive_description)/urdf/livox_mid360.xacro"/> -->
 
     <!-- <xacro:sensor_d435 name="front_camera" topics_ns="front_camera" parent="base">
            <origin xyz="0.31 -0.0 0.11" rpy="3.141 0.38 0"/>
-      </xacro:sensor_d435> -->
+    </xacro:sensor_d435> -->
 
     <!-- <xacro:sensor_t265 name="tracking_camera" topics_ns="tracking_camera" parent="base">
         <origin xyz="0.16 0 0.085" rpy="0 -1.04 0"/>
     </xacro:sensor_t265> -->
 
 
-    <!-- <xacro:Livox_Mid360 name="livox_right" parent="base" ros_topic="/livox/lidar_192_168_8_101">
-        <origin xyz="0.365 -0.068 -0.030" rpy="-2.59 1.03 3.09"/>
-    </xacro:mid360> -->
 
-    <xacro:sensor_mid360 name="livox_front" topics_ns="lidar_192_168_8_101" parent="base" xyz="0.25 0 0.150" rpy="0 0.5 0" sim="true"/>
 
-    <!-- <xacro:Livox_Mid360 name="livox_left" parent="base" ros_topic="/livox/lidar_192_168_8_102">
-        <origin xyz="0.365 0.068 -0.030" rpy="2.59 1.03 -3.09"/>
-    </xacro:Livox_Mid360> -->
+    <xacro:sensor_mid360 name="livox_front" topics_ns="lidar_192_168_1_105" parent="base" xyz="0.25 0 0.350" rpy="0 0.5 0" sim="true"/>
+
+    <!-- <xacro:Livox_Mid_gazebo_sensor name="livox_front" parent="base" ros_topic="/livox/lidar_192_168_1_105">
+        <origin xyz="0.25 0 0.150" rpy="0 0.5 0"/>
+    </xacro:Livox_Mid_gazebo_sensor> -->
 
 </robot>

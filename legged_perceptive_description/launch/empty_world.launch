@@ -3,7 +3,7 @@
     <!-- Define Arguments -->
     <arg name="robot_type" default="$(env ROBOT_TYPE)" doc="Robot type: [a1, aliengo, go1, laikago]"/>
     <arg name="gui" default="true" />
-    <arg name="world" default="$(find legged_gazebo)/worlds/empty_world.world" />
+    <arg name="world" default="$(find legged_gazebo)/worlds/stairs.world" />
 
     <!-- Set Logger Levels to DEBUG for livox_laser_simulation Package -->
     <param name="rosconsole/config/logger_levels" value="livox_laser_simulation=DEBUG" />
