@@ -4,16 +4,18 @@
   <node pkg="nodelet" type="nodelet" name="$(arg manager)" args="manager" output="screen"/>
 
   <rosparam command="load" file="$(find legged_perceptive_controllers)/config/body_filter.yaml"/>
+  
+  <node name="livox_to_pointcloud2" pkg="livox_to_pointcloud2" type="livox_to_pointcloud2_node" output="screen"/>
 
   <node pkg="nodelet" type="nodelet" name="livox_front_filter" args="load sensor_filters/pointcloud2_filter_chain $(arg manager)">
-    <remap from="~input" to="/livox/lidar_192_168_1_105"/>
+    <remap from="~input" to="/livox/points"/>
     <remap from="~output" to="/livox/front"/>
   </node>
 
   <!-- Elevation mapping node -->
-  <!-- <node pkg="elevation_mapping" type="elevation_mapping" name="elevation_mapping" output="screen">
+  <node pkg="elevation_mapping" type="elevation_mapping" name="elevation_mapping" output="screen">
     <rosparam command="load" file="$(find legged_perceptive_controllers)/config/elevation_mapping.yaml"/>
-  </node> -->
+  </node>
 
   <!-- Run a passthrough filter to down-sample the sensor point cloud.-->
   <!-- <node pkg="nodelet" type="nodelet" name="pcl_manager" args="manager" output="screen"/>
