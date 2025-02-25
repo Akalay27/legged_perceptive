@@ -13,6 +13,16 @@
         <origin xyz="0.026999998021870863507 0.045888238620114721322 0.13622000005960458346" rpy="-3.141592653589793116 -3.141592653589793116 -9.9579925010295568285e-17"/>
     </joint>
 
+    <link name="lidar_imu_frame"/>
+
+    <!-- Fixed Joint to attach lidar_imu_frame to lidar_frame using the provided extrinsics -->
+    <joint name="lidar_imu_joint" type="fixed">
+    <parent link="lidar_frame"/>
+    <child link="lidar_imu_frame"/>
+    <!-- Extrinsics: translation from lidar_frame and identity rotation -->
+    <origin xyz="0.011 0.02329 -0.04412" rpy="0 0 0"/>
+    </joint>
+
     <!-- Joint to attach nuc_top to base -->
     <joint name="nuc_top_joint" type="fixed">
         <parent link="base"/>

@@ -41,6 +41,8 @@
     </group> -->
 
     
+    <include file="$(find fast_lio)/launch/mapping_mid360.launch"/>
+    
 
 
 </launch>

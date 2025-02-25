@@ -23,7 +23,6 @@
 
     <include file="$(find legged_perceptive_controllers)/launch/elevation_mapping.launch"/>
 
-    <include file="$(find fast_lio)/launch/mapping_mid360.launch"/>
 
 
 
