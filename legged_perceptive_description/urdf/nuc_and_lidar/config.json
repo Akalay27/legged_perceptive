@@ -1,0 +1,11 @@
+{
+    "documentId": "ea9e1cb6a141215ece5cf554",
+    "outputFormat": "urdf",
+    "onshape_access_key": "AHCQNe6XN628aMm8PJXuA9nx",
+    "onshape_secret_key": "J43o82771sRselk3fky8UCzvN3ArVOdAtDP9tyuBCjgyWpuK",
+    "onshape_api": "https://cad.onshape.com",
+    "drawFrames": true,
+    "packageName": "legged_perceptive_description/urdf/nuc_and_lidar",
+    "simplifySTLs": "visual",
+    "maxSTLSize": 2
+}

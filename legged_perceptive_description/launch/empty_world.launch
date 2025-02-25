@@ -1,20 +1,31 @@
+<?xml version="1.0"?>
 <launch>
+    <!-- Define Arguments -->
     <arg name="robot_type" default="$(env ROBOT_TYPE)" doc="Robot type: [a1, aliengo, go1, laikago]"/>
     <arg name="gui" default="true" />
     <arg name="world" default="$(find legged_gazebo)/worlds/empty_world.world" />
-    <param name="legged_robot_description" command="$(find xacro)/xacro $(find legged_perceptive_description)/urdf/robot.xacro
-        robot_type:=$(arg robot_type) sim:=true
-    "/>
-    <node name="generate_urdf" pkg="legged_common" type="generate_urdf.sh" output="screen"
-          args="$(find legged_perceptive_description)/urdf/robot.xacro $(arg robot_type)"/>
 
+    <!-- Set Logger Levels to DEBUG for livox_laser_simulation Package -->
+    <param name="rosconsole/config/logger_levels" value="livox_laser_simulation=DEBUG" />
+
+    <!-- Define Robot Description -->
+    <param name="legged_robot_description" command="$(find xacro)/xacro $(find legged_perceptive_description)/urdf/robot.xacro robot_type:=$(arg robot_type) sim:=true
+    "/>
+
+    <!-- Generate URDF -->
+    <node name="generate_urdf" pkg="legged_common" type="generate_urdf.sh" output="screen" args="$(find legged_perceptive_description)/urdf/robot.xacro $(arg robot_type)"/>
+
+    <!-- Load Additional Parameters -->
     <rosparam file="$(find legged_gazebo)/config/default.yaml" command="load"/>
+
+    <!-- Include Gazebo Launch File -->
     <include file="$(find gazebo_ros)/launch/empty_world.launch">
         <arg name="world_name" value="$(arg world)"/>
         <arg name="gui" value="$(arg gui)"/>
     </include>
-    <!-- push robot_description to factory and spawn robot in gazebo -->
-    <node name="spawn_urdf" pkg="gazebo_ros" type="spawn_model" clear_params="true"
-          args="-z 0.2 -param legged_robot_description -urdf -model $(arg robot_type)" output="screen"/>
 
+    <!-- Spawn the Robot in Gazebo -->
+    <node name="spawn_urdf" pkg="gazebo_ros" type="spawn_model" clear_params="true" args="-z 0.2 -param legged_robot_description -urdf -model $(arg robot_type)" output="screen"/>
+
+    <include file="$(find legged_perceptive_description)/launch/mid360.launch"/>
 </launch>

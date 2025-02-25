@@ -1,0 +1,98 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://ros.org/wiki/xacro">
+
+    <!-- Define the Livox Mid-360 LiDAR Sensor Macro -->
+    <xacro:macro name="sensor_mid360" params="name topics_ns parent xyz rpy sim=true">
+        <xacro:property name="M_PI" value="3.1415926535897931"/>
+
+        <!-- Material for Visualization -->
+        <material name="${name}_material">
+            <color rgba="0.2 0.2 0.2 1"/>
+        </material>
+
+        <!-- Fixed Joint to Parent Link -->
+        <joint name="${name}_joint" type="fixed">
+            <origin xyz="${xyz}" rpy="${rpy}"/>
+            <parent link="${parent}"/>
+            <child link="${name}_link"/>
+        </joint>
+
+        <!-- Link Representing the LiDAR Sensor -->
+        <link name="${name}_link">
+            <visual>
+                <origin xyz="0 0 0" rpy="0 0 0"/>
+                <geometry>
+                    <mesh filename="file://$(find livox_laser_simulation)/meshes/livox_mid-360-90x.dae" scale="1 1 1"/>
+                </geometry>
+                <material name="${name}_material"/>
+            </visual>
+            <collision>
+                <origin xyz="0 0 0" rpy="0 0 0"/>
+                <!-- <geometry>
+                    <mesh filename="package://livox_laser_simulation/meshes/livox_mid-360-90x.dae" scale="1 1 1"/>
+                </geometry> -->
+            </collision>
+            <inertial>
+                <mass value="0.5"/>
+                <origin xyz="0 0 0"/>
+                <inertia ixx="0.01" iyy="0.01" izz="0.01" ixy="0.0" ixz="0.0" iyz="0.0"/>
+            </inertial>
+        </link>
+
+        <!-- Conditional Inclusion for Simulation -->
+        <xacro:if value="${sim}">
+            <!-- Sensor Frame Joint -->
+            <joint name="${name}_sensor_joint" type="fixed">
+                <origin xyz="0 0 0.05" rpy="0 0 0"/>
+                <parent link="${name}_link"/>
+                <child link="${name}_sensor_frame"/>
+            </joint>
+            <link name="${name}_sensor_frame"/>
+
+            <!-- Gazebo Sensor Plugin Configuration -->
+            <gazebo reference="${name}_sensor_frame">
+                <sensor type="ray" name="${name}_laser_livox">
+                    <pose>${xyz} ${rpy}</pose>
+                    <visualize>true</visualize>
+                    <always_on>true</always_on>
+                    <update_rate>10</update_rate>
+                    <plugin name="gazebo_ros_laser_controller" filename="liblivox_laser_simulation.so">
+                        <ray>
+                            <scan>
+                                <horizontal>
+                                    <samples>100</samples>
+                                    <resolution>1</resolution>
+                                    <min_angle>-${M_PI}</min_angle>
+                                    <max_angle>${M_PI}</max_angle>
+                                </horizontal>
+                                <vertical>
+                                    <samples>50</samples>
+                                    <resolution>1</resolution>
+                                    <min_angle>-${M_PI}</min_angle>
+                                    <max_angle>${M_PI}</max_angle>
+                                </vertical>
+                            </scan>
+                            <range>
+                                <min>0.1</min>
+                                <max>40</max>
+                                <resolution>1</resolution>
+                            </range>
+                            <noise>
+                                <type>gaussian</type>
+                                <mean>0.0</mean>
+                                <stddev>0.0</stddev>
+                            </noise>
+                        </ray>
+                        <visualize>false</visualize>
+                        <samples>20000</samples>
+                        <downsample>1</downsample>
+                        <csv_file_name>mid360-real-centr.csv</csv_file_name>
+                        <publish_pointcloud_type>2</publish_pointcloud_type>
+                        <ros_topic>/livox/${topics_ns}</ros_topic>
+                        <frameName>${name}_sensor_frame</frameName>
+                    </plugin>
+                </sensor>
+            </gazebo>
+        </xacro:if>
+    </xacro:macro>
+</robot>

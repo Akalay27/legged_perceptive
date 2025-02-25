@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="onshape_with_lidar">
+
+    <!-- Import the main URDF file -->
+    <xacro:include filename="mount.xacro"/>
+
+    <link name="lidar_frame"/>
+
+    <!-- Fixed Joint to Attach lidar_frame to nuc_top -->
+    <joint name="lidar_frame_joint" type="fixed">
+        <parent link="nuc_top"/>
+        <child link="lidar_frame"/>
+        <origin xyz="0.026999998021870863507 0.045888238620114721322 0.13622000005960458346" rpy="-3.141592653589793116 -3.141592653589793116 -9.9579925010295568285e-17"/>
+    </joint>
+
+    <!-- Joint to attach nuc_top to base -->
+    <joint name="nuc_top_joint" type="fixed">
+        <parent link="base"/>
+        <child link="nuc_top"/>
+        <origin xyz="0.10975 0.046 0.0575" rpy="3.141592653589793116 3.141592653589793116 0"/>
+    </joint>
+
+</robot>
