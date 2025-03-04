@@ -18,7 +18,7 @@
   </node>
 
   <!-- Run a passthrough filter to down-sample the sensor point cloud.-->
-  <!-- <node pkg="nodelet" type="nodelet" name="pcl_manager" args="manager" output="screen"/>
+  <node pkg="nodelet" type="nodelet" name="pcl_manager" args="manager" output="screen"/>
   <node pkg="nodelet" type="nodelet" name="voxel_grid" args="load pcl/VoxelGrid pcl_manager" output="screen">
     <remap from="~input" to="/front_camera/depth/color/points"/>
     <remap from="~output" to="/front_camera/depth/color/points_downsampled"/>
@@ -29,7 +29,7 @@
       filter_limit_negative: False
       leaf_size: 0.02                                     
     </rosparam>
-  </node> -->
+  </node>
 
   <include file="$(find convex_plane_decomposition_ros)/launch/convex_plane_decomposition.launch">
     <arg name="parameter_file" value="$(find legged_perceptive_controllers)/config/convex_plane_decomposition.yaml"/>
