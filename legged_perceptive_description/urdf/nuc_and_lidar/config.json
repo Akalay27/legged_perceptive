@@ -7,5 +7,6 @@
     "drawFrames": true,
     "packageName": "legged_perceptive_description/urdf/nuc_and_lidar",
     "simplifySTLs": "visual",
-    "maxSTLSize": 2
+    "maxSTLSize": 2,
+    "assemblyName": "NUCassem"
 }

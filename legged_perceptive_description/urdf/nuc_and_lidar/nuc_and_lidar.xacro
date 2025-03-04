@@ -2,7 +2,7 @@
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="onshape_with_lidar">
 
     <!-- Import the main URDF file -->
-    <xacro:include filename="mount.xacro"/>
+    <xacro:include filename="mount_2.xacro"/>
 
     <link name="lidar_frame"/>
 
@@ -27,7 +27,7 @@
     <joint name="nuc_top_joint" type="fixed">
         <parent link="base"/>
         <child link="nuc_top"/>
-        <origin xyz="0.10975 0.046 0.0575" rpy="3.141592653589793116 3.141592653589793116 0"/>
+        <origin xyz="0.10975 0.046 0.0648" rpy="3.141592653589793116 3.141592653589793116 0"/>
     </joint>
 
 </robot>
