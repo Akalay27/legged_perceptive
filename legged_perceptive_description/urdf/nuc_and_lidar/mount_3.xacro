@@ -200,7 +200,7 @@
         </collision>
     </link>
     <!-- Frame livox (dummy link + fixed joint) -->
-    <link name="livox">
+    <!-- <link name="livox">
         <origin xyz="0 0 0" rpy="0 -0 0"/>
         <inertial>
             <origin xyz="0 0 0" rpy="0 0 0"/>
@@ -213,5 +213,5 @@
         <parent link="mid-360_lidar_unit"/>
         <child link="livox"/>
         <axis xyz="0 0 0"/>
-    </joint>
+    </joint> -->
 </robot>
