@@ -20,7 +20,7 @@
     <parent link="lidar_frame"/>
     <child link="lidar_imu_frame"/>
     <!-- Extrinsics: translation from lidar_frame and identity rotation -->
-    <origin xyz="-0.011 -0.02329 0.04412" rpy="0 0 0"/>
+    <origin xyz="0.011 0.02329 -0.04412" rpy="0 0 0"/>
     </joint>
 
     <!-- Joint to attach nuc_top to base -->
