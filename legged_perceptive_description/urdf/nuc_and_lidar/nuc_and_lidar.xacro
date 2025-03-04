@@ -2,7 +2,7 @@
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="onshape_with_lidar">
 
     <!-- Import the main URDF file -->
-    <xacro:include filename="mount_2.xacro"/>
+    <xacro:include filename="mount_3.xacro"/>
 
     <link name="lidar_frame"/>
 
