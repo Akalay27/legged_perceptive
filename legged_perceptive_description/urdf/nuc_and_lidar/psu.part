@@ -2,12 +2,12 @@
     "configuration": "default",
     "documentId": "ea9e1cb6a141215ece5cf554",
     "documentMicroversion": "8688a0542b4dae71000946cc",
-    "elementId": "35f08dd8df3574fbcf887493",
+    "elementId": "d2286e3078da8726a36e3a20",
     "fullConfiguration": "default",
-    "id": "MCTlEtx4jl73Nnxli",
+    "id": "MYrZ0XKHopdXKTK/K",
     "isStandardContent": false,
-    "name": "NUC <2>",
-    "partId": "JHD",
+    "name": "psu <1>",
+    "partId": "JID",
     "suppressed": false,
     "type": "Part"
 }

@@ -1,0 +1,14 @@
+{
+    "configuration": "default",
+    "documentId": "87bc7067b8149ae1f58b954f",
+    "documentMicroversion": "c4af3f83181cc6e94b099f8c",
+    "documentVersion": "92cefbc4f72129bacc596ea9",
+    "elementId": "5a59a947cdcfc64d3829479c",
+    "fullConfiguration": "default",
+    "id": "MAP+X5p5T1do7QEZW",
+    "isStandardContent": false,
+    "name": "VoltageRegulatorMount <1>",
+    "partId": "JHD",
+    "suppressed": false,
+    "type": "Part"
+}

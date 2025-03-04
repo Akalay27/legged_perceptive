@@ -1,0 +1,14 @@
+{
+    "configuration": "default",
+    "documentId": "ad6d562aaa3e63fa1c43ed00",
+    "documentMicroversion": "8d7dc402930b754d6e58f474",
+    "documentVersion": "468f8c27664cb665580af517",
+    "elementId": "ea111bda42e15f33a1a307f6",
+    "fullConfiguration": "default",
+    "id": "M6fgMNhBdl52tDa0e",
+    "isStandardContent": false,
+    "name": "MID-360 Lidar Unit <1>",
+    "partId": "JJD",
+    "suppressed": false,
+    "type": "Part"
+}
