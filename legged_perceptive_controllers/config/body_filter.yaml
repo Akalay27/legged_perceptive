@@ -6,10 +6,10 @@ livox_front_filter:
         active: True
         input_frame: "lidar_frame"
         output_frame: "lidar_frame"
-        min_x: -0.3
-        max_x: 0.3
-        min_y: -0.3
-        max_y: 0.3
+        min_x: -1
+        max_x: 0.4
+        min_y: -0.5
+        max_y: 0.5
         min_z: -100
         max_z: 100
         negative: True
