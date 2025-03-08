@@ -1,7 +1,8 @@
-<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="onshape">
+<?xml version="1.0" ?>
 <!-- Generated using onshape-to-robot -->
+<robot name="onshape">
     <!-- Link mid-360_lidar_unit -->
-    <link name="nuc_top">
+    <link name="mid-360_lidar_unit">
         <inertial>
             <origin xyz="0.0919709 0.0455289 0.0500946" rpy="0 0 0"/>
             <mass value="1.44797"/>
@@ -11,7 +12,7 @@
         <visual>
             <origin xyz="0.0240064 0.0460004 0.106664" rpy="6.12323e-17 -0.383972 -6.93889e-18"/>
             <geometry>
-                <mesh filename="file://$(find legged_perceptive_description)/urdf/nuc_and_lidar/mid_360_lidar_unit.stl"/>
+                <mesh filename="package://legged_perceptive_description/urdf/nuc_and_lidar/mid_360_lidar_unit.stl"/>
             </geometry>
             <material name="mid-360_lidar_unit_material">
                 <color rgba="0.615686 0.811765 0.929412 1.0"/>
@@ -20,14 +21,14 @@
         <collision>
             <origin xyz="0.0240064 0.0460004 0.106664" rpy="6.12323e-17 -0.383972 -6.93889e-18"/>
             <geometry>
-                <mesh filename="file://$(find legged_perceptive_description)/urdf/nuc_and_lidar/mid_360_lidar_unit.stl"/>
+                <mesh filename="package://legged_perceptive_description/urdf/nuc_and_lidar/mid_360_lidar_unit.stl"/>
             </geometry>
         </collision>
         <!-- Part voltageregulatormount -->
         <visual>
             <origin xyz="0.1705 0.046 0.049" rpy="1.01161e-46 -2.30521e-16 -3.14159"/>
             <geometry>
-                <mesh filename="file://$(find legged_perceptive_description)/urdf/nuc_and_lidar/voltageregulatormount.stl"/>
+                <mesh filename="package://legged_perceptive_description/urdf/nuc_and_lidar/voltageregulatormount.stl"/>
             </geometry>
             <material name="voltageregulatormount_material">
                 <color rgba="0.615686 0.811765 0.929412 1.0"/>
@@ -36,14 +37,14 @@
         <collision>
             <origin xyz="0.1705 0.046 0.049" rpy="1.01161e-46 -2.30521e-16 -3.14159"/>
             <geometry>
-                <mesh filename="file://$(find legged_perceptive_description)/urdf/nuc_and_lidar/voltageregulatormount.stl"/>
+                <mesh filename="package://legged_perceptive_description/urdf/nuc_and_lidar/voltageregulatormount.stl"/>
             </geometry>
         </collision>
         <!-- Part nuc -->
         <visual>
             <origin xyz="0.044 0.046 0.05" rpy="3.14159 -0 -1.5708"/>
             <geometry>
-                <mesh filename="file://$(find legged_perceptive_description)/urdf/nuc_and_lidar/nuc.stl"/>
+                <mesh filename="package://legged_perceptive_description/urdf/nuc_and_lidar/nuc.stl"/>
             </geometry>
             <material name="nuc_material">
                 <color rgba="0.4 0.4 0.4 1.0"/>
@@ -52,14 +53,14 @@
         <collision>
             <origin xyz="0.044 0.046 0.05" rpy="3.14159 -0 -1.5708"/>
             <geometry>
-                <mesh filename="file://$(find legged_perceptive_description)/urdf/nuc_and_lidar/nuc.stl"/>
+                <mesh filename="package://legged_perceptive_description/urdf/nuc_and_lidar/nuc.stl"/>
             </geometry>
         </collision>
         <!-- Part nuc_enclosure_side -->
         <visual>
             <origin xyz="0.1175 0.092 -2.60209e-18" rpy="0 -0 3.14159"/>
             <geometry>
-                <mesh filename="file://$(find legged_perceptive_description)/urdf/nuc_and_lidar/nuc_enclosure_side.stl"/>
+                <mesh filename="package://legged_perceptive_description/urdf/nuc_and_lidar/nuc_enclosure_side.stl"/>
             </geometry>
             <material name="nuc_enclosure_side_material">
                 <color rgba="0.615686 0.811765 0.929412 1.0"/>
@@ -68,14 +69,14 @@
         <collision>
             <origin xyz="0.1175 0.092 -2.60209e-18" rpy="0 -0 3.14159"/>
             <geometry>
-                <mesh filename="file://$(find legged_perceptive_description)/urdf/nuc_and_lidar/nuc_enclosure_side.stl"/>
+                <mesh filename="package://legged_perceptive_description/urdf/nuc_and_lidar/nuc_enclosure_side.stl"/>
             </geometry>
         </collision>
         <!-- Part nuc_enclosure_side_2 -->
         <visual>
             <origin xyz="-0.0305 5.58794e-11 0" rpy="0 -0 0"/>
             <geometry>
-                <mesh filename="file://$(find legged_perceptive_description)/urdf/nuc_and_lidar/nuc_enclosure_side.stl"/>
+                <mesh filename="package://legged_perceptive_description/urdf/nuc_and_lidar/nuc_enclosure_side.stl"/>
             </geometry>
             <material name="nuc_enclosure_side_2_material">
                 <color rgba="0.615686 0.811765 0.929412 1.0"/>
@@ -84,14 +85,14 @@
         <collision>
             <origin xyz="-0.0305 5.58794e-11 0" rpy="0 -0 0"/>
             <geometry>
-                <mesh filename="file://$(find legged_perceptive_description)/urdf/nuc_and_lidar/nuc_enclosure_side.stl"/>
+                <mesh filename="package://legged_perceptive_description/urdf/nuc_and_lidar/nuc_enclosure_side.stl"/>
             </geometry>
         </collision>
         <!-- Part mounting_rail -->
         <visual>
             <origin xyz="0.10975 0.0745 -2.60209e-18" rpy="-6.16298e-33 -1.2326e-32 -2.77556e-17"/>
             <geometry>
-                <mesh filename="file://$(find legged_perceptive_description)/urdf/nuc_and_lidar/mounting_rail.stl"/>
+                <mesh filename="package://legged_perceptive_description/urdf/nuc_and_lidar/mounting_rail.stl"/>
             </geometry>
             <material name="mounting_rail_material">
                 <color rgba="0.980392 0.713725 0.00392157 1.0"/>
@@ -100,14 +101,14 @@
         <collision>
             <origin xyz="0.10975 0.0745 -2.60209e-18" rpy="-6.16298e-33 -1.2326e-32 -2.77556e-17"/>
             <geometry>
-                <mesh filename="file://$(find legged_perceptive_description)/urdf/nuc_and_lidar/mounting_rail.stl"/>
+                <mesh filename="package://legged_perceptive_description/urdf/nuc_and_lidar/mounting_rail.stl"/>
             </geometry>
         </collision>
         <!-- Part psu -->
         <visual>
             <origin xyz="0.169134 0.046 0.063" rpy="-2.30521e-16 -1.01161e-46 -1.5708"/>
             <geometry>
-                <mesh filename="file://$(find legged_perceptive_description)/urdf/nuc_and_lidar/psu.stl"/>
+                <mesh filename="package://legged_perceptive_description/urdf/nuc_and_lidar/psu.stl"/>
             </geometry>
             <material name="psu_material">
                 <color rgba="0.231373 0.380392 0.705882 1.0"/>
@@ -116,14 +117,14 @@
         <collision>
             <origin xyz="0.169134 0.046 0.063" rpy="-2.30521e-16 -1.01161e-46 -1.5708"/>
             <geometry>
-                <mesh filename="file://$(find legged_perceptive_description)/urdf/nuc_and_lidar/psu.stl"/>
+                <mesh filename="package://legged_perceptive_description/urdf/nuc_and_lidar/psu.stl"/>
             </geometry>
         </collision>
         <!-- Part battery -->
         <visual>
             <origin xyz="0.1725 0.008 0.026" rpy="-1.5708 2.30521e-16 0"/>
             <geometry>
-                <mesh filename="file://$(find legged_perceptive_description)/urdf/nuc_and_lidar/battery.stl"/>
+                <mesh filename="package://legged_perceptive_description/urdf/nuc_and_lidar/battery.stl"/>
             </geometry>
             <material name="battery_material">
                 <color rgba="0.615686 0.811765 0.929412 1.0"/>
@@ -132,14 +133,14 @@
         <collision>
             <origin xyz="0.1725 0.008 0.026" rpy="-1.5708 2.30521e-16 0"/>
             <geometry>
-                <mesh filename="file://$(find legged_perceptive_description)/urdf/nuc_and_lidar/battery.stl"/>
+                <mesh filename="package://legged_perceptive_description/urdf/nuc_and_lidar/battery.stl"/>
             </geometry>
         </collision>
         <!-- Part frame -->
         <visual>
             <origin xyz="0.00640463 0.0460605 0.15023" rpy="3.14159 0.383972 -3.14159"/>
             <geometry>
-                <mesh filename="file://$(find legged_perceptive_description)/urdf/nuc_and_lidar/frame.stl"/>
+                <mesh filename="package://legged_perceptive_description/urdf/nuc_and_lidar/frame.stl"/>
             </geometry>
             <material name="frame_material">
                 <color rgba="0.615686 0.811765 0.929412 1.0"/>
@@ -148,14 +149,14 @@
         <collision>
             <origin xyz="0.00640463 0.0460605 0.15023" rpy="3.14159 0.383972 -3.14159"/>
             <geometry>
-                <mesh filename="file://$(find legged_perceptive_description)/urdf/nuc_and_lidar/frame.stl"/>
+                <mesh filename="package://legged_perceptive_description/urdf/nuc_and_lidar/frame.stl"/>
             </geometry>
         </collision>
         <!-- Part mounting_rail_2 -->
         <visual>
             <origin xyz="0.10975 -0.0175 0" rpy="0 -0 0"/>
             <geometry>
-                <mesh filename="file://$(find legged_perceptive_description)/urdf/nuc_and_lidar/mounting_rail.stl"/>
+                <mesh filename="package://legged_perceptive_description/urdf/nuc_and_lidar/mounting_rail.stl"/>
             </geometry>
             <material name="mounting_rail_2_material">
                 <color rgba="0.980392 0.713725 0.00392157 1.0"/>
@@ -164,14 +165,14 @@
         <collision>
             <origin xyz="0.10975 -0.0175 0" rpy="0 -0 0"/>
             <geometry>
-                <mesh filename="file://$(find legged_perceptive_description)/urdf/nuc_and_lidar/mounting_rail.stl"/>
+                <mesh filename="package://legged_perceptive_description/urdf/nuc_and_lidar/mounting_rail.stl"/>
             </geometry>
         </collision>
         <!-- Part part_1 -->
         <visual>
             <origin xyz="0.0435 0.0745 0.0515" rpy="3.14159 1.15074e-31 3.14159"/>
             <geometry>
-                <mesh filename="file://$(find legged_perceptive_description)/urdf/nuc_and_lidar/part_1.stl"/>
+                <mesh filename="package://legged_perceptive_description/urdf/nuc_and_lidar/part_1.stl"/>
             </geometry>
             <material name="part_1_material">
                 <color rgba="0.615686 0.811765 0.929412 1.0"/>
@@ -180,14 +181,14 @@
         <collision>
             <origin xyz="0.0435 0.0745 0.0515" rpy="3.14159 1.15074e-31 3.14159"/>
             <geometry>
-                <mesh filename="file://$(find legged_perceptive_description)/urdf/nuc_and_lidar/part_1.stl"/>
+                <mesh filename="package://legged_perceptive_description/urdf/nuc_and_lidar/part_1.stl"/>
             </geometry>
         </collision>
         <!-- Part batterymount -->
         <visual>
             <origin xyz="0.1745 0.046 -6.93889e-18" rpy="-2.30521e-16 -0 -1.5708"/>
             <geometry>
-                <mesh filename="file://$(find legged_perceptive_description)/urdf/nuc_and_lidar/batterymount.stl"/>
+                <mesh filename="package://legged_perceptive_description/urdf/nuc_and_lidar/batterymount.stl"/>
             </geometry>
             <material name="batterymount_material">
                 <color rgba="0.615686 0.811765 0.929412 1.0"/>
@@ -196,22 +197,23 @@
         <collision>
             <origin xyz="0.1745 0.046 -6.93889e-18" rpy="-2.30521e-16 -0 -1.5708"/>
             <geometry>
-                <mesh filename="file://$(find legged_perceptive_description)/urdf/nuc_and_lidar/batterymount.stl"/>
+                <mesh filename="package://legged_perceptive_description/urdf/nuc_and_lidar/batterymount.stl"/>
             </geometry>
         </collision>
     </link>
-    <!-- Frame livox -->
-    <link name="lidar_frame"/>
-    <joint name="lidar_frame_joint" type="fixed">
-        <parent link="nuc_top"/>
-        <child link="lidar_frame"/>
-        <origin xyz="0.00640463 0.0460605 0.15023" rpy="0 0.383972 3.14159"/>
-    </joint>
-    <link name="lidar_imu_frame"/>
-    <joint name="lidar_imu_joint" type="fixed">
-        <parent link="lidar_frame"/>
-        <child link="lidar_imu_frame"/>
-        <!-- Extrinsics: translation from lidar_frame and identity rotation -->
-        <origin xyz="0.011 0.02329 -0.04412" rpy="0 0 0"/>
+    <!-- Frame livox (dummy link + fixed joint) -->
+    <link name="livox">
+        <origin xyz="0 0 0" rpy="0 -0 0"/>
+        <inertial>
+            <origin xyz="0 0 0" rpy="0 0 0"/>
+            <mass value="1e-9"/>
+            <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0"/>
+        </inertial>
+    </link>
+    <joint name="livox_frame" type="fixed">
+        <origin xyz="0.00640463 0.0460605 0.15023" rpy="3.14159 0.383972 -3.14159"/>
+        <parent link="mid-360_lidar_unit"/>
+        <child link="livox"/>
+        <axis xyz="0 0 0"/>
     </joint>
 </robot>
