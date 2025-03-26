@@ -8,5 +8,5 @@
     "packageName": "legged_perceptive_description/urdf/nuc_and_lidar",
     "simplifySTLs": "visual",
     "maxSTLSize": 2,
-    "assemblyName": "NUCwithSlant"
+    "assemblyName": "NUCLiDARSetup"
 }

@@ -2,12 +2,12 @@
     "configuration": "default",
     "documentId": "ea9e1cb6a141215ece5cf554",
     "documentMicroversion": "8afcd2bb230a7c649bbfe740",
-    "elementId": "d2286e3078da8726a36e3a20",
+    "elementId": "2f7acf5f630c52f394e52a1d",
     "fullConfiguration": "default",
-    "id": "MYrZ0XKHopdXKTK/K",
+    "id": "MPmmm4HQOs8RnAKCT",
     "isStandardContent": false,
-    "name": "psu <1>",
-    "partId": "JID",
+    "name": "lidarMetalMount <2>",
+    "partId": "JHD",
     "suppressed": false,
     "type": "Part"
 }

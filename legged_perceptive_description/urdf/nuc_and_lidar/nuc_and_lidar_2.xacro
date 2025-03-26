@@ -2,7 +2,7 @@
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="onshape_with_lidar">
 
     <!-- Import the main URDF file -->
-    <xacro:include filename="mount_4.xacro"/>
+    <xacro:include filename="mount_5.xacro"/>
 
     <joint name="nuc_top_joint" type="fixed">
         <parent link="base"/>
