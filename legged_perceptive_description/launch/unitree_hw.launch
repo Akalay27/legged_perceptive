@@ -11,7 +11,7 @@
     <param name="robot_type" value="$(arg robot_type)"/>
     <node name="legged_unitree_hw" pkg="legged_unitree_hw" type="legged_unitree_hw_3_8_0" respawn="false" clear_params="true"/>
 
-
+<!-- 
     <group ns="front_camera">
         <include file="$(find realsense2_camera)/launch/includes/nodelet.launch.xml">
             <arg name="external_manager" value="true"/>
@@ -30,7 +30,7 @@
             <arg name="enable_sync" value="true"/>
         <arg name="allow_no_texture_points" value="true"/> 
         </include>
-    </group>
+    </group> -->
 
     <include file="$(find legged_perceptive_description)/launch/mid360.launch"/>
 
@@ -48,7 +48,7 @@
     </group> -->
 
     
-    <include file="$(find fast_lio)/launch/mapping_mid360.launch"/>
+    <!-- <include file="$(find fast_lio)/launch/mapping_mid360.launch"/> -->
     
 
 

@@ -3,29 +3,42 @@ livox_top_filter:
     - name: cropbox_filter
       type: point_cloud2_filters/CropBoxFilterPointCloud2
       # Sort of safe no-no-square mode
-      # params:
-      #   active: True
-      #   input_frame: "lidar_frame"
-      #   output_frame: "lidar_frame"
-      #   min_x: -1
-      #   max_x: 0.4
-      #   min_y: -0.5
-      #   max_y: 0.5
-      #   min_z: -100
-      #   max_z: 100
-      #   negative: True
-      # Super safe no-no-square mode (now in frame of the robot)
       params:
         active: True
         input_frame: "base"
         output_frame: "lidar_frame"
-        min_x: -1.0
-        max_x: 1.0
-        min_y: -1.0
-        max_y: 1.0
+        min_x: -1
+        max_x: 0.35
+        min_y: -0.5
+        max_y: 0.5
         min_z: -100
         max_z: 100
         negative: True
+      # Super safe no-no-square mode (now in frame of the robot)
+      # params:
+      #   active: True
+      #   input_frame: "base"
+      #   output_frame: "lidar_frame"
+      #   min_x: -1.0
+      #   max_x: 1.0
+      #   min_y: -1.0
+      #   max_y: 1.0
+      #   min_z: -100
+      #   max_z: 100
+      #   negative: True
+    - name: cropbox_filter2
+      type: point_cloud2_filters/CropBoxFilterPointCloud2
+      params:
+        active: True
+        input_frame: "base"
+        output_frame: "lidar_frame"
+        min_x: 0.35
+        max_x: 3
+        min_y: -0.75
+        max_y: 0.75
+        min_z: -1
+        max_z: 0.3
+        negative: False
 realsense_front_filter:
   cloud_filter_chain:
     - name: voxelgrid_filter

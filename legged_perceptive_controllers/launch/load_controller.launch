@@ -15,6 +15,12 @@
           controllers/perceptive_controller
 "/>
 
+    <node name="wait_for_controller_then_run" pkg="controller_utils"
+      type="wait_for_controller_then_run.py" output="screen">
+      <param name="controller_name" value="controllers/perceptive_controller"/>
+      <param name="start_command" value="roslaunch fast_lio mapping_mid360.launch"/>
+    </node>
+
     <node pkg="ocs2_legged_robot_ros" type="legged_robot_gait_command" name="legged_robot_gait_command"
           output="screen"/>
 
@@ -23,7 +29,7 @@
 
     <include file="$(find legged_perceptive_controllers)/launch/elevation_mapping.launch"/>
 
-
+      <!-- <include file="$(find legged_perceptive_controllers)/launch/joy_teleop.launch"/> -->
 
   
 
